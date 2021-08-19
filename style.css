@@ -56,18 +56,22 @@ body {
   padding: 1rem;
   background: var(--secondary-color);
   transition: all 0.5 ease-in-out;
+  visibility: hidden;
+  opacity: 0;
 }
 
 /* Right boxes */
 
 #timeline ul li:nth-child(odd) div {
   left: 40px;
+  transform: translateX(200px);
 }
 
 /* Right boxes */
 
 #timeline ul li:nth-child(even) div {
   right: 434px;
+  transform: translateX(-200px);
 }
 
 /* Dots */
@@ -79,10 +83,10 @@ body {
   bottom: 0;
   width: 25px;
   height: 25px;
-  background: var(--secondary-color);
+  background: #fff;
   transform: translateX(-50%);
   border-radius: 50%;
-  transition: background 0.5 ease-in-out;
+  transition: background 1s ease-in-out;
 }
 
 /* Arrows Base */
@@ -108,6 +112,19 @@ body {
   right: -15px;
   border-width: 8px 0 8px 16px;
   border-color: transparent transparent transparent var(--secondary-color);
+}
+
+/* Show */
+
+#timeline ul li.show div {
+  transform: none;
+  transition: all 0.5s ease-in-out;
+  visibility: visible;
+  opacity: 1;
+}
+
+#timeline ul li.show::after {
+  background: var(--secondary-color);
 }
 
 @media (max-width: 900px) {
